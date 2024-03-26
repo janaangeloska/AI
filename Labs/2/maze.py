@@ -1,17 +1,5 @@
 from searching_framework import *
 
-# dzidovi na slucajni poz, ne moze da se preskoknuvaat
-# zabraneta oz obstacles, zabrenta poz nadvor od matrica
-# 4 nasoki:
-"""
-gore 1
-dolu 1
-levo 1
-desno 2
-desno 3
-"""
-
-
 class Maze(Problem):
 
     def __init__(self, initial, prechki, house, goal=None):
@@ -104,5 +92,3 @@ if __name__ == '__main__':
     if astar is not None:
         print(astar.solution())
         
-
-
