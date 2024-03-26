@@ -1,24 +1,5 @@
 from searching_framework import *
 
-# class Game:
-
-# static:
-# grid_size
-
-# dozvoleni nasoki:
-# горе, горе-десно и горе-лево VKLUCENI 0, 1 ili 2 skoka
-
-# podvizhni:
-# kukja, covece
-
-# nevaldini states:
-"""
-  da zastane na pole sho ne e zeleno aka vo ovie grupava allowed
-  da izleze od tablata
-  edinstveno pole na koe moze da zastane coveceto od posledniot red e poleto na kukjickata drugite se zabraneti  
-"""
-
-
 class Game(Problem):
 
     def __init__(self, initial, allowed_pos, goal=None):
@@ -70,7 +51,6 @@ class Game(Problem):
         house_dir = state[2]
 
         # Stoj
-
         if house_dir == 'desno':
             new_house_pos = (house_x + 1, house_y)
             if new_house_pos in house_allowed:
@@ -130,7 +110,6 @@ class Game(Problem):
                         successors["Gore 1"] = new_state
 
         # Gore-desno 1
-
         new_man_pos = (man_x + 1, man_y + 1)
         if house_dir == 'desno':
             new_house_pos = (house_x + 1, house_y)
@@ -159,7 +138,6 @@ class Game(Problem):
                     successors["Gore-desno 1"] = new_state
 
         # Gore-levo 1
-
         new_man_pos = (man_x - 1, man_y + 1)
         if house_dir == 'desno':
             new_house_pos = (house_x + 1, house_y)
@@ -190,7 +168,6 @@ class Game(Problem):
                         successors["Gore-levo 1"] = new_state
 
         # Gore 2
-
         new_man_pos = (man_x, man_y + 2)
         if house_dir == 'desno':
             new_house_pos = (house_x + 1, house_y)
@@ -221,7 +198,6 @@ class Game(Problem):
                         successors["Gore 2"] = new_state
 
         # Gore-desno 2
-
         new_man_pos = (man_x + 2, man_y + 2)
         if house_dir == 'desno':
             new_house_pos = (house_x + 1, house_y)
@@ -293,7 +269,7 @@ class Game(Problem):
         house_y = house_pos[1]
 
         # return (man_x - house_x) + (man_y - house_y)
-
+      
         return (man_y - house_y) / 2
 
 
